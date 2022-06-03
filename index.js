@@ -1,100 +1,92 @@
 //Assignment (Main JavaScript Project):
 
-let playerScore = 0;
-let computerScore = 0;
-let round = 0;
-
-const getUserChoice = () => {
-  let value = prompt(
-    "Enter Your choice to play a 5 Round Game: 1.Rock, 2.Paper 3.Scissors "
-  );
-  userInput = value.toLowerCase(); //"rOCk" or PAPEr or scissors
-
-  if (
-    userInput === "rock" ||
-    userInput === "paper" ||
-    userInput === "scissors"
-  ) {
-    return userInput;
-  } else {
-    return (
-      userInput +
-      " Please correct the spelling or enter Rock,Paper or Scissors to play the game. "
-    );
-  }
-};
-//console.log(getUserChoice("rock"));
-
-const getcomputerChoice = () => {
-  result = Math.floor(Math.random() * 3);
-  if (result === 0) {
-    return "rock";
-  } else if (result === 1) {
-    return "paper";
-  } else {
-    return "scissors";
-  }
-};
-
-const determineGameWinner = (userChoice, computerChoice) => {
-  if (userChoice === computerChoice) {
-    return "The game is a Tie!";
-  }
-  if (userChoice === "rock") {
-    if (computerChoice === "paper") {
-      computerScore++;
-      return "Computer Won! Paper covers Rock";
-    } else if (computerChoice === "scissors") {
-      playerScore++;
-      return "Player Won! Rock smashes Scissors";
-    }
-  }
-
-  if (userChoice === "paper") {
-    if (computerChoice === "scissors") {
-      computerScore++;
-      return "Computer Won! Scissors cuts Paper";
-    } else if (computerChoice === "rock") {
-      playerScore++;
-      return "Player Won! Paper covers rock!";
-    }
-  }
-
-  if (userChoice === "scissors") {
-    if (computerChoice === "rock") {
-      computerScore++;
-      return "Computer Won! Rock smashes Scissors. ";
-    } else if (computerChoice === "paper") {
-      playerScore++;
-      return "Player Won! Scissors cuts Paper";
-    }
-  }
-};
-
-//console.log(determineGameWinner("paper", "scissors"));
-
-//let value = prompt("Enter Your choice:");
-
 const playGame = () => {
-  //let adj = document.getElementById("userinput").value;
+  let playerScore = 0;
+  let computerScore = 0;
+  let round = 0;
+
+  const getUserChoice = () => {
+    let value = prompt(
+      "Enter Your choice to play a 5 Round Game: 1.Rock, 2.Paper 3.Scissors "
+    );
+    userInput = value.toLowerCase(); //"rOCk" or PAPEr or scissors
+
+    if (
+      userInput === "rock" ||
+      userInput === "paper" ||
+      userInput === "scissors"
+    ) {
+      return userInput;
+    } else {
+      return (
+        userInput +
+        " Please correct the spelling or enter Rock,Paper or Scissors to play the game. "
+      );
+    }
+  };
+  //console.log(getUserChoice("rock"));
+
+
+  const getcomputerChoice = () => {
+    result = Math.floor(Math.random() * 3);
+    if (result === 0) {
+      return "rock";
+    } else if (result === 1) {
+      return "paper";
+    } else {
+      return "scissors";
+    }
+  };
+
+
+  const determineGameWinner = (userChoice, computerChoice) => {
+    if (userChoice === computerChoice) {
+      return "The game is a Tie!";
+    }
+    if (userChoice === "rock") {
+      if (computerChoice === "paper") {
+        computerScore++;
+        return "Computer Won! Paper covers Rock";
+      } else if (computerChoice === "scissors") {
+        playerScore++;
+        return "Player Won! Rock smashes Scissors";
+      }
+    }
+
+    if (userChoice === "paper") {
+      if (computerChoice === "scissors") {
+        computerScore++;
+        return "Computer Won! Scissors cuts Paper";
+      } else if (computerChoice === "rock") {
+        playerScore++;
+        return "Player Won! Paper covers rock!";
+      }
+    }
+
+    if (userChoice === "scissors") {
+      if (computerChoice === "rock") {
+        computerScore++;
+        return "Computer Won! Rock smashes Scissors. ";
+      } else if (computerChoice === "paper") {
+        playerScore++;
+        return "Player Won! Scissors cuts Paper";
+      }
+    }
+  };
+
+  
+  //using for loop to run 5 rounds of game.
 
   for (let i = 1; i <= 5; i++) {
     const userChoice = getUserChoice();
     const computerChoice = getcomputerChoice();
     round = round + 1;
-    //document.write(
-    // "The player chose " + userChoice + "The computer chose " + computerChoice
-    //);
-    //determineGameWinner(userChoice, computerChoice);
-    //document.write("Result:" + determineGameWinner(userChoice, computerChoice));
+    
     console.log("Round No: " + round);
     console.log(
       `The player chose ${userChoice} || The computer chose ${computerChoice}`
     );
-    console.log(
-      "Round " +
-        i +
-        " result:" +
+    console.log("Round " + i +" result:" +
         determineGameWinner(userChoice, computerChoice)
     );
     console.log("Player Score: " + playerScore);
@@ -111,6 +103,7 @@ const playGame = () => {
     console.log("COMPUTER is WINNER");
   } else {
     console.log("It's a Tie!");
+    console.log("----------------------------------------------");
   }
 };
 
@@ -119,7 +112,7 @@ playGame();
 //Assignment (Mathematical Shapes):
 //a. Write a JavaScript program to find the diagonal of a square where the length of each side is 9.
 
-let diagonalSquare = (y) => y * Math.sqrt(2).toFixed(2);
+let diagonalSquare = (num) => num * Math.sqrt(2).toFixed(2);
 
 console.log(
   "The diagonal of square with the length of 9 each side is :" +
@@ -153,10 +146,8 @@ let circumCircle = (r) => {
   return 2 * pi * r;
 };
 
-//console.log("Circumference of the Circle is :" + circumCircle(3));
-
 console.log(
-  `Circumference of the Circle with radius is :"`,
+  `Circumference of the Circle with radius is :`,
   circumCircle(3).toFixed(2)
 );
 
