@@ -1,6 +1,6 @@
 //Assignment (Main JavaScript Project):
 
-/*const playGame = () => {
+const playGame = () => {
   let playerScore = 0;
   let computerScore = 0;
   let round = 0;
@@ -107,7 +107,7 @@
   }
 };
 
-playGame(); */
+playGame(); 
 
 //Assignment (Mathematical Shapes):
 //a. Write a JavaScript program to find the diagonal of a square where the length of each side is 9.
