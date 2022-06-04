@@ -1,6 +1,6 @@
 //Assignment (Main JavaScript Project):
 
-const playGame = () => {
+/*const playGame = () => {
   let playerScore = 0;
   let computerScore = 0;
   let round = 0;
@@ -107,7 +107,7 @@ const playGame = () => {
   }
 };
 
-playGame();
+playGame(); */
 
 //Assignment (Mathematical Shapes):
 //a. Write a JavaScript program to find the diagonal of a square where the length of each side is 9.
@@ -154,18 +154,15 @@ console.log(
 //Assignment (Conditional Statements & Loops):
 //a) Write a JavaScript program that accepts two integers and displays the larger of the two.
 
-let bigger = (x, y) => {
-  if (x > y) {
-    return x;
-  } else {
-    return y;
-  }
-};
+let bigger = (x, y) => (x > y) ? x : y ;
 
-console.log("the larger integer is :" + (99, 38));
+console.log("the larger integer is :" + bigger(49,38));
 
 //b) Write a JavaScript program that checks whether an integer is an even or an odd number.
 
 let evenOdd = (x) => (x % 2 === 0 ? "even" : "odd");
 
 console.log("The entered number is : " + evenOdd(92));
+
+
+
