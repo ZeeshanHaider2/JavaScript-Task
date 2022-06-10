@@ -1,5 +1,5 @@
 //ROCK, PAPAER SCISSORS using array and Math.random function
-
+/*
 let choices  = ['rock', 'paper', 'scissors'];
 
 let validInput = ()=>{
@@ -17,21 +17,7 @@ let computerPlay = ()=>{
   }
   
   computerPlay();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 //Assignment (Main JavaScript Project):
 
