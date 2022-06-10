@@ -1,12 +1,23 @@
+//ROCK, PAPAER SCISSORS using array and Math.random function
+
 let choices  = ['rock', 'paper', 'scissors'];
 
+let validInput = ()=>{
+
+  let input = prompt("Choose rock, paper or scissors");
+    choices.includes(input) ?
+    console.log ( "you chose " + input):
+    console.log("please select correct move");
+}
+validInput();
 
 let computerPlay = ()=>{
-let random = Math.floor(Math.random()* choices.length);
-   return(choices[random]);
-}
+  let random = Math.floor(Math.random()* choices.length);
+     console.log("computer chose " + (choices[random]));
+  }
+  
+  computerPlay();
 
-console.log(computerPlay());
 
 
 
