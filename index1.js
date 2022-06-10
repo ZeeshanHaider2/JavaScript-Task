@@ -1,4 +1,121 @@
-//ROCK, PAPAER SCISSORS using array and Math.random function
+//ROCK, PAPAER SCISSORS
+
+let humanScore = 0;
+let computerScore = 0;
+
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
+const userScore = document.getElementById("userScore");
+const compScore = document.getElementById("compScore");
+const round = document.getElementById("round");
+const result = document.getElementById("result");
+const reset = document.getElementById("reset");
+
+rock.addEventListener("click", (e) => {
+  console.log(determineGameWinner("rock", getcomputerChoice()));
+});
+
+paper.addEventListener("click", (e) => {
+  console.log(determineGameWinner("paper", getcomputerChoice()));
+});
+
+scissors.addEventListener("click", (e) => {
+  console.log(determineGameWinner("scissors", getcomputerChoice()));
+});
+
+const getcomputerChoice = () => {
+  resultt = Math.floor(Math.random() * 3);
+  if (resultt === 0) return "rock";
+  else if (resultt === 1) return "paper";
+  else return "scissors";
+};
+
+const determineGameWinner = (userChoice, computerChoice) => {
+  if (userChoice === computerChoice) 
+  return round.innerText = "Round Tied - O points";
+
+  if (userChoice === "rock") {
+    if (computerChoice === "paper") {
+      lose();
+      return round.innerText ="Computer Won this Round";
+    } else if (computerChoice === "scissors") {
+      win();
+
+      return round.innerText ="Human Won this Round";
+    }
+  }
+
+  if (userChoice === "paper") {
+    if (computerChoice === "scissors") {
+      lose();
+      return round.innerText ="Computer Won this Round";
+    } else if (computerChoice === "rock") {
+      win();
+      return round.innerText ="Human Won this Round";
+    }
+  }
+
+  if (userChoice === "scissors") {
+    if (computerChoice === "rock") {
+      // computerScore++;
+      lose();
+      return round.innerText ="Computer Won this Round";
+    } else if (computerChoice === "paper") {
+      win();
+      return round.innerText ="Human Won this Round";
+    }
+  }
+};
+
+let win = () => {
+  humanScore++;
+  userScore.innerText = humanScore;
+  endGame();
+};
+
+let lose = () => {
+  computerScore++;
+  compScore.innerText = computerScore;
+  endGame();
+};
+
+let draw = () => {
+};
+
+let endGame = () => {
+  if (humanScore === 5) {
+    result.innerText = "Human Won 5 Rounds First ";
+   resetGame();
+  } else if (computerScore === 5) {
+    result.innerText = "Computer Won 5 Rounds First";
+    resetGame();
+  }
+};
+
+let resetGame=()=>{
+  humanScore = 0;
+  computerScore = 0;
+  userScore.innerText = humanScore;
+  compScore.innerText = computerScore;
+  
+};
+
+reset.addEventListener('click', (e)=>{
+  resetResult();
+});
+
+let resetResult=()=>{
+  result.innerText = "";
+  round.innerText = ""
+}
+
+
+  
+
+//console.log(determineGameWinner('rock', 'scissors'));
+
+//ROCK, PAPAER SCISSORS using array and Math.random function (only user/computer choices)
 /*
 let choices  = ['rock', 'paper', 'scissors'];
 
