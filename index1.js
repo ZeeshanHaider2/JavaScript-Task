@@ -39,21 +39,21 @@ const determineGameWinner = (userChoice, computerChoice) => {
   if (userChoice === "rock") {
     if (computerChoice === "paper") {
       lose();
-      return round.innerText ="Computer chose paper, Won this Round";
+      return round.innerText ="Computer chose Paper, Won this Round";
     } else if (computerChoice === "scissors") {
       win();
 
-      return round.innerText ="Computer chose scissors, Human Won this Round";
+      return round.innerText ="Computer chose Scissors, Human Won this Round";
     }
   }
 
   if (userChoice === "paper") {
     if (computerChoice === "scissors") {
       lose();
-      return round.innerText ="Computer chose scissors, Won this Round";
+      return round.innerText ="Computer chose Scissors, Won this Round";
     } else if (computerChoice === "rock") {
       win();
-      return round.innerText ="Computer chose rock, Human Won this Round";
+      return round.innerText ="Computer chose Rock, Human Won this Round";
     }
   }
 
@@ -61,10 +61,10 @@ const determineGameWinner = (userChoice, computerChoice) => {
     if (computerChoice === "rock") {
       // computerScore++;
       lose();
-      return round.innerText ="Computer chose rock, Won this Round";
+      return round.innerText ="Computer chose Rock, Won this Round";
     } else if (computerChoice === "paper") {
       win();
-      return round.innerText ="Computer chose paper, Human Won this Round";
+      return round.innerText ="Computer chose Paper, Human Won this Round";
     }
   }
 };
