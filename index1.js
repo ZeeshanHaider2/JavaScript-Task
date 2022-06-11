@@ -14,6 +14,7 @@ const reset = document.getElementById("reset");
 
 rock.addEventListener("click", (e) => {
   console.log(determineGameWinner("rock", getcomputerChoice()));
+
 });
 
 paper.addEventListener("click", (e) => {
@@ -38,21 +39,21 @@ const determineGameWinner = (userChoice, computerChoice) => {
   if (userChoice === "rock") {
     if (computerChoice === "paper") {
       lose();
-      return round.innerText ="Computer Won this Round";
+      return round.innerText ="Computer chose paper, Won this Round";
     } else if (computerChoice === "scissors") {
       win();
 
-      return round.innerText ="Human Won this Round";
+      return round.innerText ="Computer chose scissors, Human Won this Round";
     }
   }
 
   if (userChoice === "paper") {
     if (computerChoice === "scissors") {
       lose();
-      return round.innerText ="Computer Won this Round";
+      return round.innerText ="Computer chose scissors, Won this Round";
     } else if (computerChoice === "rock") {
       win();
-      return round.innerText ="Human Won this Round";
+      return round.innerText ="Computer chose rock, Human Won this Round";
     }
   }
 
@@ -60,10 +61,10 @@ const determineGameWinner = (userChoice, computerChoice) => {
     if (computerChoice === "rock") {
       // computerScore++;
       lose();
-      return round.innerText ="Computer Won this Round";
+      return round.innerText ="Computer chose rock, Won this Round";
     } else if (computerChoice === "paper") {
       win();
-      return round.innerText ="Human Won this Round";
+      return round.innerText ="Computer chose paper, Human Won this Round";
     }
   }
 };
@@ -86,7 +87,7 @@ let draw = () => {
 let endGame = () => {
   if (humanScore === 5) {
     result.innerText = "Human Won 5 Rounds First ";
-   resetGame();
+    resetGame(); 
   } else if (computerScore === 5) {
     result.innerText = "Computer Won 5 Rounds First";
     resetGame();
@@ -98,7 +99,6 @@ let resetGame=()=>{
   computerScore = 0;
   userScore.innerText = humanScore;
   compScore.innerText = computerScore;
-  
 };
 
 reset.addEventListener('click', (e)=>{
@@ -111,6 +111,7 @@ let resetResult=()=>{
 }
 
 
+  
   
 
 //console.log(determineGameWinner('rock', 'scissors'));

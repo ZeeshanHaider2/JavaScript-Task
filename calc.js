@@ -19,7 +19,7 @@ numbersButtons.map(button =>{
         currentOperand === 0 ? currentOperand === "": '';
         if(e.target.innerText === '.' && currentOperand.includes('.'))return
         currentOperand+=e.target.innerText;
-        console.log(currentOperand);
+        //console.log(currentOperand);
         updateDisplay();
        
     })
@@ -60,24 +60,19 @@ clearButton.addEventListener('click', e =>{
     updateDisplay();
 })
 
-deleteButton.addEventListener('click', e => {
-    currentOperand = 0;
-    updateDisplay;
-})
-
 function  calculateResults() {
     const curr = parseFloat(currentOperand)
     const prev = parseFloat(previousOperand)
     let results;
 
-   // if( isNaN(prev)  ||  isNaN(curr) ) return 
+   
     operation === '+' ? results = prev  + curr
     : operation === '-' ? results =  prev - curr
     : operation === '*' ? results = prev * curr
     : operation === '÷' && curr === 0 ? results = "You Can't divide by 0"
     : operation === '÷' ? results = prev / curr 
     : '';
-    //Math.round((results + Number.EPSILON) * 100) / 100;
+   
     currentOperand = results
     operation = null;
     previousOperand = ''
