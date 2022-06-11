@@ -19,7 +19,6 @@ numbersButtons.map(button =>{
         currentOperand === 0 ? currentOperand === "": '';
         if(e.target.innerText === '.' && currentOperand.includes('.'))return
         currentOperand+=e.target.innerText;
-        //console.log(currentOperand);
         updateDisplay();
        
     })
@@ -56,7 +55,6 @@ clearButton.addEventListener('click', e =>{
     currentOperand = 0;
     previousOperand= "";
     operation = null;
-
     updateDisplay();
 })
 
@@ -82,3 +80,10 @@ equalButton.addEventListener('click', () => {
     calculateResults()
     updateDisplay()
 })
+
+deleteButton.addEventListener('click', e =>{
+  currentOperand = currentOperand.slice(0, -1); 
+    updateDisplay();
+});
+
+deleteButton();
